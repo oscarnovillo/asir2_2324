@@ -1,9 +1,15 @@
-import math
+from random import randint
 
-print(abs(-1) , pow(8,1/3),pow(2,3))
 
-junto = "ask"[2]+"ask"[1]
-print("ask"[2].upper(),"ask"[1])
+numero = randint(0,20)
 
-print("ask".upper())
+numero = 20
+#condiciones
+if ( numero ==20 | numero < 10 & numero > 5 ):
+  print("ENTRAA ACERTE")
+
+
+
+
+
 
