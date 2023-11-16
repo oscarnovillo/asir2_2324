@@ -2,7 +2,14 @@ import random
 
 
 # estatico
+vocal1 = "a"
+vocal2 = "e"
+vocal3 = "i"
+vocal4 = "o"
+vocal5 = "u"
+
 palabras_estatico = ["a","e","i","o","u"]
+
 numeros = [0,0,0,0,0]
 
 
@@ -43,9 +50,11 @@ print(media)
 
 print(palabras_dinamico)
 
-# numeros = [ x  for x in range(10) ]
-# numeros2 = random.sample(range(10), 10)
+numeros = [ x  for x in range(10) ]
+numeros2 = random.sample(range(10), 10)
 
+
+palabrasAlea = random.sample(["holoa","adios"],9)
 
 
 # print(numeros2)

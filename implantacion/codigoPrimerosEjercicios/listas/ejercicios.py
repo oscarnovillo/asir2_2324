@@ -13,7 +13,10 @@ for i in range(10):
 print(numeros)
 print(numeros_random_comoyase)
 print(numeros_random_medio_normal)
-numeros_random_medio_normal.reverse()
+numeros_random_reverse = []
+for i in range(len(numeros_random_medio_normal)-1,-1,-1):
+    numeros_random_reverse.append(numeros_random_medio_normal[i])
+
 print(numeros_random_medio_normal)
 
 
