@@ -9,7 +9,7 @@ def main():
         print(" 1. Crear coche")
         print(" 2. Listar coches")
         print(" 3. Buscar coche")
-        print(" 4. Buscar coche")
+        print(" 4. Borrar coche")
         print(" 5. Salir")
         opcion = input("Introduce una opcion: ")
         if (opcion == "1"):

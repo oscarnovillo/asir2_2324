@@ -20,6 +20,32 @@ class CochesServicios:
         matricula = input("Introduce la matricula: ")
         coche_borrar = Coche(matricula, "", "", "")
         coches.remove(coche_borrar)
+        coches.pop(coches.index(coche_borrar))
+        for coche in coches:
+            if (coche.matricula == matricula):
+                coches.remove(coche)
+        for indice,coche in enumerate(coches):
+            if (coche.matricula == matricula):
+                coches.pop(indice)
+                break
+        coches.remove(self.buscarCocheParaBorrar(matricula))
+
+
+    def buscarCocheParaBorrar(self,matricula : str) -> Coche:
+        for coche in coches:
+            if (coche.matricula == matricula):
+                return coche
+        return None
+
+        
+    def actualizarCoche(self):
+        matricula = input("Introduce la matricula: ")
+        modelo = input("Introduce el modelo: ")
+       
+        for coche in coches:
+            if (coche.matricula == matricula):
+                coche.modelo = modelo
+          
 
 
     def buscarCoche(self):
