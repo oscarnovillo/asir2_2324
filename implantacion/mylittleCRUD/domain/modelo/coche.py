@@ -6,3 +6,8 @@ class Coche:
         self.modelo = modelo
         self.color = color
 
+
+    # comparar por defecto por matricula
+    def __eq__(self, other):
+        return self.matricula == other.matricula
+

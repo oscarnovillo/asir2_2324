@@ -16,6 +16,12 @@ class CochesServicios:
         coche = Coche(matricula, marca, modelo, color)
         coches.append(coche)
 
+    def borrarCoche(self):
+        matricula = input("Introduce la matricula: ")
+        coche_borrar = Coche(matricula, "", "", "")
+        coches.remove(coche_borrar)
+
+
     def buscarCoche(self):
         matricula = input("Introduce la matricula: ")
         for coche  in coches:
@@ -27,4 +33,5 @@ class CochesServicios:
 
     def listar_coches(self):
         for coche in coches:
-            print(coche.matricula,coche.maca,coche.modleo )
+            print(coche.matricula,coche.marca,coche.modelo )
+

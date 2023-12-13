@@ -9,7 +9,8 @@ def main():
         print(" 1. Crear coche")
         print(" 2. Listar coches")
         print(" 3. Buscar coche")
-        print(" 4. Salir")
+        print(" 4. Buscar coche")
+        print(" 5. Salir")
         opcion = input("Introduce una opcion: ")
         if (opcion == "1"):
             cochesServicios.crearCoche()
@@ -18,6 +19,8 @@ def main():
         elif (opcion == "3"):
             cochesServicios.buscarCoche()
         elif (opcion == "4"):
+            cochesServicios.borrarCoche()
+        elif (opcion == "5"):
             break
         else:
             print("Opcion incorrecta")
