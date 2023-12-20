@@ -3,9 +3,9 @@
 
 
 {% block content %}
-   <table border="1">
+   <table border="1" style="width: 100%;">
     <tr><td>ID</td><td>NOMBRE</td><td>CIUDAD</td></tr>
-    {% for equipo in equipos %}
+    {% for equipo in mimadre %}
        
           
         <tr>
@@ -16,6 +16,7 @@
             <input type="hidden" name="id" value="{{equipo.id}}" />
             <input type="submit" value="Borrar" />
           </form></td>
+          <td>otra columna</td>
         </tr>
        
     {% endfor %}

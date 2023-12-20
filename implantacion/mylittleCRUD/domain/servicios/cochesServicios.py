@@ -5,9 +5,6 @@ from data.db import coches
 
 class CochesServicios:
 
-    def __init__(self):
-        pass
-
     def crearCoche(self):
         matricula = input("Introduce la matricula: ")
         marca = input("Introduce la marca: ")
@@ -59,5 +56,5 @@ class CochesServicios:
 
     def listar_coches(self):
         for coche in coches:
-            print(coche.matricula,coche.marca,coche.modelo )
+            print(coche.matricula,coche.marca,coche.modelo, coche.marca)
 

@@ -20,6 +20,8 @@ def nueva():
 
     return render_template('nueva.html',aleatorio1=loquequiera,aleatorio2=loquequiera2)
 
+
+
 @rutas_coches.route('/verEquipos')
 def verEquipos():
     equipo_dao = EquipoDao()
@@ -28,7 +30,7 @@ def verEquipos():
 
 
 
-    return render_template('test.html',equipos=equipos)
+    return render_template('test.html',mimadre=equipos)
 
 
 
