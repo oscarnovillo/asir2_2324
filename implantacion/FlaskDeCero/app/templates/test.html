@@ -3,9 +3,17 @@
 
 
 {% block content %}
+{% if error %}
+<script>
+  alert("{{error}}");
+  </script>
+{% endif %}
+  {% if saludar == 'true' %}
+    <h1>hola {{nombre}}</h1>
+  {% endif %}
    <table border="1" style="width: 100%;">
     <tr><td>ID</td><td>NOMBRE</td><td>CIUDAD</td></tr>
-    {% for equipo in mimadre %}
+    {% for equipo in equipos %}
        
           
         <tr>
@@ -26,7 +34,7 @@
   <form action="/addEquipo"  method="post">
     <label
       for="nombre">Nombre</label>
-    <input type="text" name="tuputamadre" id="" value="" />
+    <input type="text" name="nombre" id="" value="" />
     <label
       for="ciudad">Ciudad</label>
     <input type="text" name="ciudad" value="" />
@@ -55,9 +63,11 @@
       <option value="{{equipo.id}}">{{equipo.nombre}}</option>
     {% endfor %}
   </select>
+
+ 
   <label
   for="nombre">Nombre</label>
-<input type="text" name="tuputamadre" id="" value="" />
+<input type="text" name="nombre" id="" value="" />
 <label
   for="ciudad">Ciudad</label>
 <input type="text" name="ciudad" value="" />
