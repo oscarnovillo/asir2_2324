@@ -79,3 +79,5 @@ def updateEquipo():
         equipo_dao.update(db,id,nombre,ciudad)
    
     return redirect(url_for('routes.verEquipos'))    
+
+

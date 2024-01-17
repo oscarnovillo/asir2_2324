@@ -22,7 +22,10 @@ def create_app():
     
 
     from .routes import routes
+    from .routes import routes_jugadores
     
     app.register_blueprint(routes.rutas_coches)
+    app.register_blueprint(routes_jugadores.rutas_jugadores)
+
 
     return app
