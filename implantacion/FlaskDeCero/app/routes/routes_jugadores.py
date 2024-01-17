@@ -3,7 +3,7 @@ from flask import Flask, Blueprint, render_template, request, redirect, url_for
 
 from app import db
 from app.data.jugadores_dao import JugadoresDao
-from app.data.equipos_dao import EquipoDao
+from app.data.equipo_dao import EquipoDao
 from app.data.modelo.equipo import Equipo
 
 
