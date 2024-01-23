@@ -8,8 +8,8 @@ class EquipoDao:
         cursor.execute('SELECT * FROM equipos')
         equipos_en_db = cursor.fetchall()
         equipos : list[Equipo]= list()
-        for equipo_en_db in equipos_en_db:
-            equipos.append(Equipo(equipo_en_db[0], equipo_en_db[1], equipo_en_db[2]))
+        for equipo in equipos_en_db:
+            equipos.append(Equipo(equipo[0], equipo[1], equipo[2]))
 
         cursor.close()
         return equipos

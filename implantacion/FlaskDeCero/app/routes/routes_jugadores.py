@@ -17,3 +17,29 @@ def delEquipo():
     equipo_dao.delete(db,id)
    
     return redirect(url_for('routes.verEquipos'))  
+
+
+
+@rutas_jugadores.route('/verJugadores', methods=['POST','GET'])   
+def verJugadores():
+    jugadores = list()
+    nombreEquipo = ""
+    equipo_dao = EquipoDao()
+    equipos = equipo_dao.select_all(db)
+    
+    if (request.method == 'POST'):
+        id_equipo = request.form['id_equipo']
+        jugadores_dao = JugadoresDao()
+        jugadores = jugadores_dao.select_all(db,id_equipo)
+        for equipo in equipos:
+            if (equipo.id == id_equipo):
+                print(equipo)
+                nombreEquipo  = equipo.nombre
+
+    
+    print(nombreEquipo)
+
+    return render_template('jugadores.html',
+                           jugadores=jugadores,
+                           equipos=equipos,
+                           nombreEquipo=nombreEquipo)
