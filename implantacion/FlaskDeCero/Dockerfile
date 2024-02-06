@@ -12,4 +12,4 @@ COPY . .
 EXPOSE 80
 
 
-ENTRYPOINT [ "/bin/sh", "-c gunicorn --bind 0.0.0.0:80 entry_point:app"]
+ENTRYPOINT [ "/bin/sh", "run.sh"]
