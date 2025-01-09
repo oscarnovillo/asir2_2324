@@ -42,6 +42,11 @@ def main():
         print(carta, carta1)
         carta = baraja.siguiente_carta()
         carta1 = baraja.siguiente_carta()
+        if (carta.valor > carta1.valor):
+
+         if ( carta.palo == carta.Palo.BASTOS):
+            print("Gana el jugador 1")
+
 
     # for i in range (0,40,2):
     #     miputamadre = baraja.cartas[i]

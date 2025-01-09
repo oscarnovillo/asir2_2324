@@ -3,6 +3,7 @@ from flask import Flask, Blueprint, render_template, request, redirect, url_for
 
 from app import db
 from app.data.equipo_dao import EquipoDao
+from app.data.modelo.equipo import Equipo
 
 
 rutas_coches = Blueprint("routes", __name__)
@@ -20,15 +21,18 @@ def nueva():
 
     return render_template('nueva.html',aleatorio1=loquequiera,aleatorio2=loquequiera2)
 
+
+
 @rutas_coches.route('/verEquipos')
 def verEquipos():
     equipo_dao = EquipoDao()
-
+    nombre = request.args.get('nombre')
     equipos = equipo_dao.select_all(db)
+    saludar = request.args.get('saludar')
+   
 
 
-
-    return render_template('test.html',equipos=equipos)
+    return render_template('test.html',equipos=equipos,saludar=saludar,nombre=nombre)
 
 
 
@@ -37,7 +41,7 @@ def verEquipos():
 def addEquipo():
     equipo_dao = EquipoDao()
 
-    nombre = request.form['tuputamadre']
+    nombre = request.form['nombre']
     ciudad = request.form['ciudad']
 
     if (nombre == "" or ciudad == ""):
@@ -45,6 +49,8 @@ def addEquipo():
 
     equipo_dao.insert(db,nombre,ciudad)
    
+    #return render_template('ok.html')  
+  
     return redirect(url_for('routes.verEquipos'))    
 
 @rutas_coches.route('/delEquipo', methods=['POST'])   
@@ -64,7 +70,7 @@ def updateEquipo():
     equipo_dao = EquipoDao()
 
     id = request.form['id']
-    nombre = request.form['tuputamadre']
+    nombre = request.form['nombre']
     ciudad = request.form['ciudad']
 
     if (ciudad == ""):
@@ -73,3 +79,5 @@ def updateEquipo():
         equipo_dao.update(db,id,nombre,ciudad)
    
     return redirect(url_for('routes.verEquipos'))    
+
+

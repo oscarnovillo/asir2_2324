@@ -1,18 +1,24 @@
 
 from app.data.modelo.equipo import Equipo
+from app.data.modelo.jugador import Jugador
 
-class EquipoDao:
+class JugadoresDao:
 
-    def select_all(self,db) -> list[Equipo]:
+    def select_all(self,db,id_equipo) -> list[Jugador]:
         cursor = db.cursor()
-        cursor.execute('SELECT * FROM equipos')
-        equipos_en_db = cursor.fetchall()
-        equipos : list[Equipo]= list()
-        for equipo in equipos_en_db:
-            equipos.append(Equipo(equipo[0], equipo[1], equipo[2]))
+        cursor.execute(
+            """
+            SELECT j.*,e.nombre FROM 
+            jugadores j inner join equipos e on j.id_equipo = e.id
+            where j.id_equipo = %s
+            """,[id_equipo])
+        jugadores_en_db = cursor.fetchall()
+        jugadores : list[Jugador]= list()
+        for jugador_en_db in jugadores_en_db:
+            jugadores.append(Jugador(jugador_en_db[0], jugador_en_db[1], jugador_en_db[4]))
 
         cursor.close()
-        return equipos
+        return jugadores
     
     def select_uno(self,db,nombre) -> Equipo:
         cursor = db.cursor()
