@@ -19,10 +19,15 @@ def main():
     nombre = input("Introduce tu nombre: ")
 
     jugador: Jugador = Jugador(nombre, "apellidos")
+    
+    
 
     nombre = input("Introduce tu nombre: ")
     jugador2 = Jugador(nombre, "apellidos")
     jugador.nombre
+    jugador = 2
+    
+    
     print(jugador.nombre_completo())
 
     # sacar dos carta, una para cada jugador

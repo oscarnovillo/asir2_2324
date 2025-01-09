@@ -1,3 +1,7 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class Jugador:
 
     def __init__(self, nombre :str,apellidos:str ,puntos:int =0):
